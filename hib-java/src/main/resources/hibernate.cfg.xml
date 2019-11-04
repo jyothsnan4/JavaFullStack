@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+<!-- Database connections -->
+<!--  <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>not needed-->
+<property name="connection.url">jdbc:mysql://localhost:3306/example</property>
+<property name="connection.username">root</property>
+<property name="connection.password">testing</property>
+<!-- JDBC connection pool (use the built-in) -->
+   <property name="hibernate.connection.pool_size">10</property>
+<!-- MySQL dialect//different for different Database communicate using this -->
+<property name="dialect">org.hibernate.dialect.MySQLDialect</property> 
+<!-- Echo all executed SQL to stdout -->
+<property name="show_sql">true</property> <!-- Will display sql commands used in console -->
+<property name="hbm2ddl.auto">create</property> <!-- you can create for first time and then update -->
+<!--use this when no annotations<mapping resource="Student.hbm.xml"/>-->
+<mapping class="com.university.hib.Course"></mapping>
+<mapping class="com.university.hib.Student4"></mapping>
+</session-factory>
+</hibernate-configuration>
