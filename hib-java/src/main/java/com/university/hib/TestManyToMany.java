@@ -45,26 +45,27 @@ public static void main(String args[]){
 	list_comp.add(stud1);
 	list_elec.add(stud2);
 	
-	/*List<Course> course_comp=new ArrayList<Course>();
+	List<Course> course_comp=new ArrayList<Course>();
 	List<Course> course_elec=new ArrayList<Course>();
 	
 	course_comp.add(course1);
 	course_comp.add(course2);
 	course_elec.add(course4);
-	course_elec.add(course5);*/ //Not needed. Just add in one table. 
-	
+	course_elec.add(course5); 
+	stud1.setCourse(course_comp);
+	stud2.setCourse(course_elec);
 	course1.setStud(list_comp);
 	course2.setStud(list_comp);
 	course4.setStud(list_elec);
 	course5.setStud(list_elec);
 	
-	session.save(course1);
+	/*session.save(course1);
 	session.save(course2);
 	session.save(course4);
 	session.save(course5);
-	session.save(course6);
-	session.save(stud1);
-	session.save(stud2);
+	session.save(course6);*/ //not needed as we are using cascade
+	session.persist(stud1);
+	session.persist(stud2);
 	
 	
 	trans.commit();

@@ -11,7 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumn;
 //import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -34,8 +34,8 @@ public class Student2 implements Serializable{
     //Join column only in source class
     
     //bidirectional mapping
-    @OneToMany(orphanRemoval=true, cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="stud")  
-   // @JoinColumn(name="stud_id") //can alternatively use either mapped by or join column 
+    @OneToMany( orphanRemoval=true, cascade=CascadeType.ALL, fetch=FetchType.LAZY)  
+    @JoinColumn(name="stud_id") //can alternatively use either mapped by or join column but if we use mapped by, it is not save email object automatcally. so use join column 
     private List<Email2> list=new ArrayList<Email2>();
     
 	public List<Email2> getList() {

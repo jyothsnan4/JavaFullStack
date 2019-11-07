@@ -27,8 +27,8 @@ public class Course implements Serializable{
     
     @ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(name="student_course",
-                 joinColumns={@JoinColumn(name="course_id")},
-                 inverseJoinColumns={@JoinColumn(name="studentno")}) //order is important. join column same table id & inverse join column other table id
+                 joinColumns={@JoinColumn(name="fk_id")},
+                 inverseJoinColumns={@JoinColumn(name="fk_studentno")}) //order is important. join column same table id & inverse join column other table id
     private List<Student4> stud = new ArrayList<Student4>();
 
 	public int getCourse_id() {
@@ -51,9 +51,11 @@ public class Course implements Serializable{
 		return stud;
 	}
 
-	public void setStud(List<Student4> stud) {
-		this.stud = stud;
+	public void setStud(List<Student4> stud1) {
+		this.stud = stud1;
 	}
+
+	
     
                  
     
