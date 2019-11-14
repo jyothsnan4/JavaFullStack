@@ -1,3 +1,5 @@
+//File corrupted because of multiple git push and get. But logic is right. created for git. don't refer.
+
 package com.spring.test;
 import java.sql.SQLException;
 
@@ -9,7 +11,7 @@ import org.springframework.core.io.FileSystemResource;
 public class TestBeans {
 public static void main(String args[]) throws SQLException{
 	BeanFactory factory=new XmlBeanFactory(
-		new FileSystemResource("/Users/jyothsnagokul/Documents/NLSTRAININGEE/NLSTrainingEE/spring_core_test/src/main/java/beans.xml"));
+		new FileSystemResource("/Users/jyothsnagokul/Documents/JavaFullStack2/spring_testing/src/main/java/beans.xml"));
 	Object obj=factory.getBean("persist"); //lazy loading
 	PerformPersistence p=(PerformPersistence) obj;
 	Student stud = (Student) factory.getBean("stud");
